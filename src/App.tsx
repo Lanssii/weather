@@ -1,10 +1,10 @@
-// import { useState } from "react";
 import "./App.css";
+import Test from "./components/Test.tsx";
 
 function App() {
   return (
     <>
-      <div className="bg-red-600">lana</div>
+      <Test />
     </>
   );
 }
