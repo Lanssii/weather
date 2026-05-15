@@ -34,18 +34,19 @@ export default function Test() {
   console.log(url + city);
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="flex flex-col gap-2">
-          <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center min-h-screen bg-linear-to-br from-blue-400 via-indigo-50 to-purple-600">
+        <div className="flex flex-col gap-6 backdrop:blur-md bg-white/20 border border-white/30 rounded-3xl p-8 shadow-2xl">
+          <div className="flex justify-center items-center gap-2">
             <input
               type="text"
               value={city}
               placeholder="Write city..."
               onChange={(e) => setCity(e.target.value)}
-              className="border-2 border-gray-300 rounded-xl p-2 focus:outline-none"
+              className=" bg-white/20 text-black placeholder:text-black/70 border border-white/30 rounded-2xl px-4 py-3 outline-none
+              focus:ring-white/50 transition-all"
             />
             <button
-              className="border-2 border-amber-200 rounded-2xl p-2 cursor-pointer transition-all duration-300 ease-in-out hover:scale-110 hover:bg-amber-300 ml-2"
+              className="bg-white rounded-2xl px-5 py-3 text-black hover:scale-105 transition:all duration-300 shadow-lg ease-in-out"
               onClick={() => setTrigger((prev) => prev + 1)}
             >
               Search
@@ -54,9 +55,11 @@ export default function Test() {
           <div>
             {weather && (
               <div className="border p-4 rounded-xl">
-                <p>Temperature: {weather.temperature}</p>
-                <p>Wind: {weather.wind}</p>
-                <p>Description: {weather.description}</p>
+                <h1 className="text-2xl font-bold">
+                  Temperature: {weather.temperature}
+                </h1>
+                <p className="text-xl">Wind: {weather.wind}</p>
+                <p className="text-xl">Description: {weather.description}</p>
               </div>
             )}
           </div>
