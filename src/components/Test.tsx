@@ -34,8 +34,9 @@ export default function Test() {
   console.log(url + city);
   return (
     <>
-      <div className="flex justify-center items-center min-h-screen bg-linear-to-br from-blue-400 via-indigo-50 to-purple-600">
-        <div className="flex flex-col gap-6 backdrop:blur-md bg-white/20 border border-white/30 rounded-3xl p-8 shadow-2xl">
+      <div className="flex flex-col gap-4 justify-center items-center min-h-screen bg-linear-to-br from-blue-400 via-indigo-50 to-purple-600">
+        <h1 className="text-3xl font-bold text-center">Weather App</h1>
+        <div className="w-[420px] flex flex-col gap-6 backdrop-blur-md bg-white/20 border border-white/30 rounded-3xl p-8 shadow-2xl">
           <div className="flex justify-center items-center gap-2">
             <input
               type="text"
@@ -46,7 +47,7 @@ export default function Test() {
               focus:ring-white/50 transition-all"
             />
             <button
-              className="bg-white rounded-2xl px-5 py-3 text-black hover:scale-105 transition:all duration-300 shadow-lg ease-in-out"
+              className="bg-black rounded-2xl px-5 py-3 text-white hover:scale-105 transition-all duration-300 shadow-lg ease-in-out"
               onClick={() => setTrigger((prev) => prev + 1)}
             >
               Search
@@ -54,11 +55,9 @@ export default function Test() {
           </div>
           <div>
             {weather && (
-              <div className="border p-4 rounded-xl">
-                <h1 className="text-2xl font-bold">
-                  Temperature: {weather.temperature}
-                </h1>
-                <p className="text-xl">Wind: {weather.wind}</p>
+              <div className="bg-white/10 border border-white/20 rounded-3xl p-6 backdrop-blur-lg text-center">
+                <h1 className="text-4xl font-bold">{weather.temperature}</h1>
+                <p className="text-xl">{weather.wind}</p>
                 <p className="text-xl">Description: {weather.description}</p>
               </div>
             )}
